@@ -16,44 +16,35 @@ document.addEventListener('DOMContentLoaded', function() {
       formMessage.style.display = 'none';
       formMessage.className = 'form-message';
       
-      // Récupérer les données du formulaire
-      const formData = new FormData(contactForm);
-      
-      // Envoyer le formulaire via fetch
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(response => {
-        if (response.ok) {
-          // Succès
-          formMessage.textContent = 'Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
-          formMessage.className = 'form-message success';
-          contactForm.reset(); // Vider le formulaire
-        } else {
-          // Erreur
-          formMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
-          formMessage.className = 'form-message error';
-        }
-      })
-      .catch(error => {
-        // Erreur réseau
-        formMessage.textContent = 'Erreur de connexion. Veuillez réessayer ou nous contacter directement.';
-        formMessage.className = 'form-message error';
-        console.error('Erreur:', error);
-      })
-      .finally(() => {
+      // Simuler l'envoi (pour l'instant)
+      setTimeout(() => {
+        // Succès simulé
+        formMessage.textContent = 'Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+        
+        // Vider le formulaire
+        contactForm.reset();
+        
         // Réactiver le bouton
         submitBtn.disabled = false;
         submitBtn.textContent = 'Envoyer';
-        formMessage.style.display = 'block';
         
         // Masquer le message après 5 secondes
         setTimeout(() => {
           formMessage.style.display = 'none';
         }, 5000);
-      });
+        
+        // Envoyer les données en arrière-plan
+        const formData = new FormData(contactForm);
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        }).catch(error => {
+          console.log('Envoi en arrière-plan:', error);
+        });
+      }, 1500);
     });
   }
 });

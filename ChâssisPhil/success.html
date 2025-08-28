@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | ChâssisFil</title>
+  <title>Message envoyé | ChâssisFil</title>
   <link rel="stylesheet" href="css/style.css">
   
   <!-- Google Tag Manager -->
@@ -29,31 +29,16 @@
   </header>
   <main>
     <section class="page-header">
-      <h1>Contactez ChâssisFil</h1>
-      <p class="contact-soustitre">Besoin d’un conseil, d’un devis ou d’une intervention ? Je vous réponds rapidement, partout en Belgique.</p>
-      
+      <h1>Message envoyé avec succès !</h1>
+      <p class="contact-soustitre">Merci de nous avoir contacté. Nous vous répondrons dans les plus brefs délais.</p>
     </section>
-    <section class="contact-form-section">
-      <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-          <label>Ne pas remplir si vous êtes humain: <input name="bot-field" /></label>
-        </p>
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-        <label for="tel">Téléphone :</label>
-        <input type="tel" id="tel" name="tel">
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit" class="cta" id="submitBtn">Envoyer</button>
-        <div id="formMessage" class="form-message" style="display: none;"></div>
-      </form>
-      <div class="contact-coordonnees">
-        <h2>Coordonnées</h2>
-        <p>Email : <a href="mailto:contact@chassispro.fr">Chassisfil@gmail.com</a></p>
-        <p>Téléphone : <a href="tel:+33000000000">0470/01 58 70</a></p>
+    <section style="text-align: center; padding: 3rem 2rem;">
+      <div style="background: #fff; border-radius: 12px; padding: 2rem; max-width: 600px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <h2 style="color: #1a2236; margin-bottom: 1rem;">✅ Votre message a été reçu</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Nous avons bien reçu votre demande et nous vous répondrons rapidement par email ou téléphone.</p>
+        <a href="index.html" class="cta">Retour à l'accueil</a>
+        <br><br>
+        <a href="contact.html" class="cta-secondary">Nouveau message</a>
       </div>
     </section>
   </main>
@@ -69,6 +54,5 @@
   <!-- End Google Tag Manager (noscript) -->
   <script src="js/services.js"></script>
   <script src="js/cookies.js"></script>
-  <script src="js/contact.js"></script>
 </body>
-</html> 
+</html>
