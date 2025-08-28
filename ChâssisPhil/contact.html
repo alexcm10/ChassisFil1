@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | ChâssisFil</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      'consent_mode': 'default',
+      'analytics_storage': 'denied'
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ChâssisFil</div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-header">
+      <h1>Contactez ChâssisFil</h1>
+      <p class="contact-soustitre">Besoin d’un conseil, d’un devis ou d’une intervention ? Je vous réponds rapidement, partout en Belgique.</p>
+      
+    </section>
+    <section class="contact-form-section">
+      <form class="contact-form" id="contactForm">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <label for="tel">Téléphone :</label>
+        <input type="tel" id="tel" name="tel">
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="cta" id="submitBtn">Envoyer</button>
+        <div id="formMessage" class="form-message" style="display: none;"></div>
+      </form>
+      <div class="contact-coordonnees">
+        <h2>Coordonnées</h2>
+        <p>Email : <a href="mailto:contact@chassispro.fr">Chassisfil@gmail.com</a></p>
+        <p>Téléphone : <a href="tel:+33000000000">0470/01 58 70</a></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-legal">
+      <p>&copy; 2024 ChâssisFil. Tous droits réservés.</p>
+      <p class="footer-mentions">Site vitrine – <a href="contact.html">Contact</a> – <a href="mentions-legales.html" target="_blank">Mentions légales</a></p>
+    </div>
+  </footer>
+  <script src="js/services.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html> 
