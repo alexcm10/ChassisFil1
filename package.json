@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Site web ChâssisFil",
   "scripts": {
+    "build": "echo 'Build completed'"
   },
   "keywords": ["chassisfil", "website", "static"],
   "author": "ChâssisFil",
