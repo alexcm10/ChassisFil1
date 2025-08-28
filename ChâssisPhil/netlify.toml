@@ -1,8 +1,13 @@
 [build]
   # Pas de commande de build car c'est un site statique
   command = "echo 'Site statique - déploiement direct'"
+<<<<<<< Updated upstream
   # Dossier à publier (le dossier ChâssisPhil contient index.html)
   publish = "."
+=======
+  # Dossier à publier (le dossier ChâssisPhil)
+  publish = "ChâssisPhil"
+>>>>>>> Stashed changes
 
 # Redirections pour la navigation côté client
 [[redirects]]
