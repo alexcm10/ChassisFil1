@@ -1,0 +1,17 @@
+[build]
+  # Pas de commande de build car c'est un site statique
+  command = "echo 'Site statique - déploiement direct'"
+  # Dossier à publier (le dossier ChâssisPhil contient index.html)
+  publish = "."
+
+# Redirections pour la navigation côté client
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Gestion des erreurs 404
+[[redirects]]
+  from = "/404"
+  to = "/index.html"
+  status = 404
