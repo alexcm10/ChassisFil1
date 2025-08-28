@@ -1,0 +1,12 @@
+[build]
+  publish = "ChâssisPhil"
+  command = "echo 'Site statique - aucun build nécessaire'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuration pour Netlify Forms
+[build.environment]
+  NODE_VERSION = "18"
