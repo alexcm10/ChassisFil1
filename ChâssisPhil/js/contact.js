@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Empêcher la navigation par défaut
+      
       // Désactiver le bouton pendant l'envoi
       submitBtn.disabled = true;
       submitBtn.textContent = 'Envoi en cours...';
@@ -14,27 +16,44 @@ document.addEventListener('DOMContentLoaded', function() {
       formMessage.style.display = 'none';
       formMessage.className = 'form-message';
       
-      // Laisser Netlify gérer l'envoi automatiquement
-      // Le formulaire sera traité par Netlify Forms
+      // Récupérer les données du formulaire
+      const formData = new FormData(contactForm);
       
-      // Afficher un message de succès après un délai
-      setTimeout(() => {
-        formMessage.textContent = 'Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
-        formMessage.className = 'form-message success';
-        formMessage.style.display = 'block';
-        
+      // Envoyer le formulaire via fetch
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          // Succès
+          formMessage.textContent = 'Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+          formMessage.className = 'form-message success';
+          contactForm.reset(); // Vider le formulaire
+        } else {
+          // Erreur
+          formMessage.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+          formMessage.className = 'form-message error';
+        }
+      })
+      .catch(error => {
+        // Erreur réseau
+        formMessage.textContent = 'Erreur de connexion. Veuillez réessayer ou nous contacter directement.';
+        formMessage.className = 'form-message error';
+        console.error('Erreur:', error);
+      })
+      .finally(() => {
         // Réactiver le bouton
         submitBtn.disabled = false;
         submitBtn.textContent = 'Envoyer';
-        
-        // Vider le formulaire
-        contactForm.reset();
+        formMessage.style.display = 'block';
         
         // Masquer le message après 5 secondes
         setTimeout(() => {
           formMessage.style.display = 'none';
         }, 5000);
-      }, 2000);
+      });
     });
   }
 });
